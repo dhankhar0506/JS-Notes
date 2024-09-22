@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBack</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <h1>CALLBACKS</h1>
+        <p>
+          👉 A callback is a function that isn’t immediately executed. Instead,
+          it’s passed as an argument to another function.
+        </p>
+        <p>
+          👉 It is a function passed an argument to another function</p>
+        <div class="function">
+          <h3 >EXAMPLE</h3>
+          <hr>
+          <pre>
+            function sum(a,b){
+                console.log(a+b)
+            }  
+          <hr>
+          function calculator(a,b,callback){
+                callback(a,b)
+          }
+          <hr>          
+          calculator(a,b,sum)
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="./CallBack.js"></script>
+  </body>
+</html>

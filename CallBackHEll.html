@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBack Hell</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <!----------- DEFINE------------------ -->
+        <h1>CALLBACKS HELL</h1>
+        <p>
+          👉 Nested call backs stacked ,
+          (Pyramid of Doom)
+        </p>
+        <p>
+          👉 it is situation where mulitple nested callback calls</p>
+        <p>
+          👉  It is difficult to understand and manage
+        </p>
+
+        <!---------------- Example--------------- -->
+
+        <div class="function">
+        <h3 >EXAMPLE</h3>
+        <hr>
+        <pre>
+        <!----------------- Start--------------- -->
+      function getData(dataId,getNextData){ 
+            setTimeout(()=>{
+              console.log(dataId)
+              if(getNextData){
+                getNextData();
+              }
+            },2000)
+          }
+    <hr>
+    We want data(1) than(2) than(3)
+    <hr>
+    ➡️ Nested call back (callBack hell)
+    ➡️ We pass arrow function as argument (callback)
+    <hr>
+    ❌[getData(1,getData(2))]
+    ✅getData(1,()=>{
+                getData(2,()=>{
+                  getData(3,()=>{
+                    getData(4)
+                  })
+                })
+              })
+
+
+
+        
+        <!-------------------End---------------- -->
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="./CallBack.js"></script>
+  </body>
+</html>

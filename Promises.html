@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROMISES</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <!----------- DEFINE------------------ -->
+        <h1>PROMISES</h1>
+        <p>
+          👉 It is an Object that represent the <strong>
+            "eventual"
+          </strong>
+          Completion or failure of async talk
+        </p>
+        <p>
+          👉 Solution to callback hell
+        </p>
+        <p>
+          👉  <strong>
+            let pro = new Promise((resolve,reject)=>{...})</strong>
+          <ul>
+            <li>📢Pending</li>
+            <li>📢Fullfilled/Resolve</li>
+            <li>📢Rejected</li>
+          </ul>
+        </p>
+
+        <!---------------- Example--------------- -->
+
+        <div class="function">
+        <h3 >EXAMPLE</h3>
+        <hr>
+        <pre>
+        <!----------------- Start--------------- -->
+      function getData(dataId){ 
+            return new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                console.log(dataId)
+            ➡️  resolve("Success")
+              },2000)
+            })
+          }
+    <hr>
+    We want data(1) than(2) than(3)
+    <hr>
+    ➡️ Nested call back (callBack hell)
+    ➡️ We pass arrow function as argument (callback)
+    <hr>
+    ➡️ promises.then(res) =>{...} 📢fullfilled
+    ➡️ promises.catch(err)=>{...} 📢Rejected
+    <hr>
+  ❌ [getData(1,getData(2))]
+  
+  ✅ getData(1).then((res1)=>{
+         console.log(res1);
+            getData(2).then((res2)=>{
+              console.log(res2)
+         })
+      }).
+  <hr>
+  ✅getData(1).then(res=>{
+      return getData(2)
+    }).then(res=>{
+      return getData(3)
+    }).then(res=>{
+      console.log(res)
+    })
+    
+        <!-------------------End---------------- -->
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="./CallBack.js"></script>
+  </body>
+</html>
